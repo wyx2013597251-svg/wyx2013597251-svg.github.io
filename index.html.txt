@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>背叛</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* 粒子背景 */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 头像 */
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-top: 30px;
+  border: 3px solid #ff2e63;
+  box-shadow: 0 0 30px #ff2e63;
+}
+
+/* 标题 */
+h1 {
+  margin: 10px 0;
+}
+
+/* 按钮 */
+.btn {
+  display: block;
+  margin: 15px;
+  padding: 12px;
+  background: linear-gradient(45deg,#ff2e63,#ff6b81);
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff2e63;
+}
+
+/* 卡片 */
+.card {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+/* 打字区域 */
+#typingText {
+  display: inline;
+  font-size: 16px;
+  line-height: 1.8;
+  text-shadow: 0 0 8px #ff2e63, 0 0 15px #ff2e63;
+  white-space: pre-wrap;
+}
+
+/* 光标 */
+#cursor {
+  display: inline-block;
+  color: #ff2e63;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0;}
+}
+
+/* 图片 */
+.slider img {
+  width: 90%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<!-- 打字声音 -->
+<audio id="typeSound" src="type.mp3"></audio>
+
+<img src="product1.jpg" class="avatar">
+
+<h1>背叛</h1>
+
+<a class="btn" href="https://t.me/beipancnm">🔥 点击联系我（Telegram）</a>
+
+<!-- 图片 -->
+<div class="slider">
+  <img src="product1.jpg">
+  <img src="product2.jpg">
+  <img src="product3.jpg">
+</div>
+
+<!-- 打字机 -->
+<div class="card">
+<p id="typingText"></p><span id="cursor">|</span>
+</div>
+
+<!-- TG -->
+<div class="card">
+<p><b>TG：</b> @beipancnm</p>
+</div>
+
+<script>
+const text = `希望看到这里的宝子们 祝你们平安顺遂 越来越好 万事如意 无忧无虑 平安喜乐 岁岁常欢愉 万事皆胜意 一切尽意 百事从欢 前途似锦 天天开心 无忧无虑  平安顺遂  好好睡觉 许你自由 愿你无忧 平安喜樂 年年无碍 岁岁无忧 四季冗长 万事顺意 岁岁常欢愉 万事皆胜意知命不惧 日日自新 岁岁无忧 一切尽意 百事从欢 幸福快乐家庭和睦 天天向上 得偿所愿一帆风顺，二龙飞腾，三阳开泰，四季平安，五福临门，六六大顺，七星高照，八方来财，九九同心，十全十美，福星高照，洪福齐天，长命富贵，麒麟送福，旭日东升，鱼跃龙门，杞菊延年，寿比南山，福如东海，万代长春，喜如天降，平安如意，天降鸿福，年年有余，万事顺利`;
+
+let i = 0;
+let audio = document.getElementById("typeSound");
+
+function typing(){
+  if(i < text.length){
+    document.getElementById("typingText").innerHTML += text.charAt(i);
+
+    audio.currentTime = 0;
+    audio.play();
+
+    i++;
+    setTimeout(typing, 50);
+  }
+}
+
+typing();
+</script>
+
+<!-- 粒子 -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 2 }
+  }
+});
+</script>
+
+</body>
+</html>
